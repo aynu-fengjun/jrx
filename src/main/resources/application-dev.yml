@@ -1,0 +1,20 @@
+server:
+  port: 80
+  servlet:
+    context-path: /
+
+spring:
+  #连接数据库
+  datasource:
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql:///exam001?characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 1234
+
+#mybatis配置
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.code.entity
+  type-handlers-package: com.code.typehandler
