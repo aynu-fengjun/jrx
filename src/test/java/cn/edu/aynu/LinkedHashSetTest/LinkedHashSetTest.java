@@ -3,6 +3,7 @@ package cn.edu.aynu.LinkedHashSetTest;
 import org.junit.Test;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  *@Author:冯君
@@ -37,5 +38,33 @@ public class LinkedHashSetTest {
         for (Person person : linkedHashSet) {
             System.out.println(person);
         }
+    }
+
+    @Test
+    public void demo(){
+        //创建LinkedHashSet实例（没有修改的指定方法）
+        LinkedHashSet<Person> linkedHashSet = new LinkedHashSet<>();
+        Person p1 = new Person("张三",40);
+        Person p2 = new Person("李四",12);
+        Person p3 = new Person("王武", 20);
+        //添加元素
+        linkedHashSet.add(p1);
+        linkedHashSet.add(p2);
+        linkedHashSet.add(p3);
+        //删除元素
+        linkedHashSet.remove(p2);
+        //遍历元素
+        linkedHashSet.forEach(person-> System.out.println(person));
+        //清空集合列表
+        linkedHashSet.clear();
+
+        LinkedHashSet<String> hashSet = new LinkedHashSet<>();
+        hashSet.add("value1");
+        hashSet.add("value2");
+        hashSet.add("str1");
+        hashSet.add("zx");
+        System.out.println("集合中长度大于等于3的元素：");
+        //使用jdk8的新特性过滤元素
+        hashSet.stream().filter(value->value.length()>=3).forEach(value-> System.out.print(value+"  "));
     }
 }

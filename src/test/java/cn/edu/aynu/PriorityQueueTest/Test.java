@@ -5,6 +5,7 @@ import java.util.PriorityQueue;
 public class Test {
     public static void main(String[] args) {
         PriorityQueue<Character> queue1 = new PriorityQueue<>();
+        //添加元素
         queue1.offer('k');
         queue1.offer('f');
         queue1.offer('d');
